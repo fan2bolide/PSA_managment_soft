@@ -15,6 +15,14 @@
 #ifndef PSA_STRUCTURES_H
 #define PSA_STRUCTURES_H
 
+struct CTT
+{
+	char *id;
+	char *product_reference;
+	unsigned int nb_pieces;
+	enum {ctt_FH, ctt_FL, ctt_52GS, ctt_52GJ, } ctt_type;
+};
+
 //defining stack nodes as list nodes but only rights to push front and delete an element
 typedef struct stack_node
 {
