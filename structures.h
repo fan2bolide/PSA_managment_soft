@@ -27,19 +27,26 @@ typedef struct s_stack
 	struct stack_node *top;
 }	t_stack;
 
+//defining shelf as a array of array of <struct CTT>
 typedef struct s_shelf
 {
 	struct CTT **data;
 }	t_shelf;
 
-
-typedef struct row
+//defining row as an array of stacks or shelfs
+typedef struct s_row
 {
 	enum row_type{shelf, stack} row_type;
 	unsigned int row_size;
 	t_stack *stacks;
-	t_shelf *shelf;
-}	row;
+	t_shelf *shelfs;
+}	t_row;
+
+struct allee //nom provisoire
+{
+	t_row *row_right;
+	t_row *row_left;
+};
 
 
 #endif
