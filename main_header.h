@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bajeanno <bajeanno@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 01:38:46 by bajeanno          #+#    #+#             */
-/*   Updated: 2022/08/14 01:38:46 by bajeanno         ###   ########lyon.fr   */
+/*   Created: 2022/08/14 01:49:07 by bajeanno          #+#    #+#             */
+/*   Updated: 2022/08/14 01:49:07 by bajeanno         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main_header.h"
+#ifndef MAIN_HEADER_H_
+#define MAIN_HEADER_H_
 
-int main()
-{
-	void *datas;
+//includes
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-	create_data_structure(datas);
-	launch_app(datas);
-	save_data(datas);
-	free_datas(datas);
-	return (0);
-}
+//prototypes
+void create_data_structure(void *datas);
+void launch_app(void *datas);
+void save_data(void *datas);
+void free_datas(void *datas);
 
-void create_data_structure(void *datas)
-{
-	return;
-}
-void launch_app(void *datas)
-{
-	return;
-}
-void save_data(void *datas)
-{
-	return;
-}
-void free_datas(void *datas)
-{
-	return;
-}
+#endif
