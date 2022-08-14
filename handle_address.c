@@ -12,8 +12,9 @@
 
 #include "main_header.h"
 
-char *get_address_of_ctt(char *ctt_id);
+char *get_address_of_ctt(char *ctt_id, void *datas);
 
-char *get_product_distri_address(char *product_reference);
+char *get_product_distri_address(char *product_reference, void *datas);
 
-void	set_
+struct CTT *get_ctt(void *datas);
+
