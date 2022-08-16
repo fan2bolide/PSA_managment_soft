@@ -11,13 +11,13 @@
 /* ************************************************************************** */
 
 #ifndef MAIN_HEADER_H_
-#define MAIN_HEADER_H_
+# define MAIN_HEADER_H_
 
 //includes
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include "structures.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include "structures.h"
 
 //prototypes
 void create_data_structure(void *datas);
