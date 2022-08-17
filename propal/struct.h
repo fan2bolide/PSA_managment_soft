@@ -4,13 +4,13 @@
 
 typedef	struct	s_warehouse 
 {
-	int	shelf_nb;		// nb of shelf
-	t_shelf	*shelf_tab;		// tab of shelf
-	t_sh_ht	**shelf_hash_tab;	// hash tab to search for a ref
-	int	stack_nb;		// nb of stacks
-	t_stack	**stack_tab;		// tab of stacks
-	t_st_ht	**stack_hash_tab;	// hash tab to search for a ref
-	t_bbkht	**big_book_hash tab;	// hash tab to search for a CTT by id
+	int	sh_nb;			// nb of shelf
+	t_shelf	*sh_tab;		// tab of shelf
+	t_sh_ht	**sh_ht;		// hash tab to search for a ref
+	int	st_nb;			// nb of stacks
+	t_stack	**st_tab;		// tab of stacks
+	t_st_ht	**st_ht;		// hash tab to search for a ref
+	t_bbkht	**bbkht;		// hash tab to search for a CTT by id
 }		t_warehouse;
 
 
@@ -29,8 +29,8 @@ typedef	struct		s_CTT
 
 typedef	struct	s_shelf			// a s_shelf is one shelving of a shelf
 {
-	t_CTT	**containing;		// the array of container on this shelf
-	int	rmng_plc;		// the remaining place
+	char	*name;			// name of the shelf
+	t_CTT	*containing;		// the array of container on this shelf
 }		t_shelf;
 
 /* meme chose */
@@ -38,6 +38,8 @@ typedef	struct	s_shelf			// a s_shelf is one shelving of a shelf
 typedef struct	s_stack			// a s_stack can be accessed only on the last
 					// CTT added, it will be the t_CTT[quantity - 1]
 {
+	char	anomaly;
+	char	*name;
 	t_CTT	**containing;
 	int	quantity;
 }		t_stack;
@@ -56,10 +58,10 @@ typedef	struct	s_sh_ht			// standing for shelf_hash_tab
 
 typedef struct	s_st_ht			// standing for stack_hash_tab
 {
-	char		*ref;
+	char		anomaly;
 	unsigned int	quantity;
 	t_CTT		**position;
-}		t_st_ht;
+}			t_st_ht;
 
 /* tableau de hachage contenant l'ensemble des CTT present dans l'entrepot    */
 
