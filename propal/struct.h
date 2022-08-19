@@ -8,6 +8,8 @@ typedef	struct		s_warehouse
 	int		sector_nb;			// nb of sector
 	t_sector	*sectors			// array of sectors
 	t_bbkht		**bbkht;			// hash tab to search for a CTT by id
+	char		***ref_ht;
+	char		***ctt_id_ht;
 }			t_warehouse;
 
 typedef	struct	s_sector
@@ -17,13 +19,6 @@ typedef	struct	s_sector
 	int	st_row_nb;				// nb of stack row in the sector
 	t_st_rw	*st_rws;				// array of stack row
 }		t_sector;
-
-typedef	struct	s_stack_row
-{
-	int	row_ln;					// lenght of the row
-	char	*row_name;				// name of the row
-	t_stack	*stacks;				// array of stacks
-}		t_st_rw;
 
 typedef struct	s_shelf_row
 {
@@ -44,16 +39,8 @@ typedef	struct				s_shelving	// a s_shelf is one shelving of a shelf
 	int				*quantity;	// quantity of pieces
 	t_CTT				*containing;	// the container on this shelf
 	enum {_FH, _FL, _52GS, _52GJ}	ctt_type;	// type possibly putable in the shelving
+	int				distri;
 }					t_shelving;
-
-typedef struct				s_stack		// a s_stack can be accessed only on the last
-							// CTT added, it will be the t_CTT[quantity - 1]
-{
-	char				**contained;	// array of ref contained
-	char				*name;		// name of the stack
-	t_CTT				**containing;	// array of ptr on CTT contained
-	enum {_FH, _FL, _52GS, _52GJ}	ctt_type;
-}					t_stack;
 
 typedef	struct				s_CTT
 {
